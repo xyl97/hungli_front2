@@ -63,7 +63,11 @@
                 }
 
                 //登录
-                this.$axios.post('http://localhost:8078/login', this.loginForm).then((res) => {
+                this.$axios.get('http://localhost:8078/login',{params:{
+                    username : this.loginForm.username,
+                     password: this.loginForm.password
+                    }
+                }).then((res) => {
                     console.log(res)
                     if (res.data.result === "登录成功") {
 
